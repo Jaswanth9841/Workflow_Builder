@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* Custom hover effects for buttons */
+  .control-button {
+    @apply px-3.5 py-1.5 bg-white/90 rounded-md cursor-pointer font-semibold text-xs flex items-center gap-1.5 shadow-sm transition-all duration-200;
+  }
+
+  .control-button:hover {
+    @apply -translate-y-0.5 shadow-md;
+  }
+
+  .control-button-primary {
+    @apply control-button text-purple-primary;
+  }
+
+  .control-button-success {
+    @apply control-button text-green-500;
+  }
+
+  .control-button-gray {
+    @apply control-button text-gray-600;
+  }
+
+  .control-button-danger {
+    @apply control-button text-red-500;
+  }
+
+  .submit-button {
+    @apply px-5 py-2 bg-white/95 text-purple-primary rounded-md cursor-pointer font-bold text-sm flex items-center gap-1.5 shadow-md transition-all duration-200;
+  }
+
+  .submit-button:hover {
+    @apply -translate-y-0.5 shadow-lg bg-purple-primary text-white;
+  }
+
+  .delete-node-button {
+    @apply absolute -top-2 -right-2 w-6 h-6 rounded-full bg-red-500 border-2 border-white text-white cursor-pointer flex items-center justify-center text-sm font-bold shadow-sm transition-all duration-200 p-0 z-10;
+  }
+
+  .delete-node-button:hover {
+    @apply scale-110 bg-red-600;
+  }
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #5a67d8 0%, #6b4096 100%);
+}
+
+/* ReactFlow custom styles */
+.react-flow__node {
+  transition: transform 0.2s ease;
+  cursor: move !important;
+}
+
+.react-flow__node:hover {
+  transform: scale(1.02);
+}
+
+.react-flow__node.dragging {
+  opacity: 0.7;
+  cursor: grabbing !important;
+}
+
+.react-flow__edge-path {
+  stroke-width: 3;
+  transition: all 0.2s ease;
+}
+
+.react-flow__edge:hover .react-flow__edge-path {
+  stroke-width: 4 !important;
+  stroke: #667eea !important;
+}
+
+.react-flow__handle {
+  transition: transform 0.2s ease;
+  cursor: crosshair !important;
+}
+
+.react-flow__handle:hover {
+  transform: scale(1.3);
+}
+
+.react-flow__handle-connecting {
+  background: #667eea !important;
+  cursor: crosshair !important;
+}
+
+.react-flow__connection-path {
+  stroke: #667eea !important;
+  stroke-width: 3 !important;
+}
+
+/* Make sure cursors are visible */
+* {
+  cursor: default;
+}
+
+.react-flow__pane {
+  cursor: grab !important;
+}
+
+.react-flow__pane.dragging {
+  cursor: grabbing !important;
+}
+
+/* Slide down animation for collapsible toolbar */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    max-height: 500px;
+    transform: translateY(0);
+  }
+}
