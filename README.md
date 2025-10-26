@@ -79,6 +79,16 @@ npm start
 
 The frontend will be available at **http://localhost:3000**
 
+## 📸 Screenshots
+
+### Main Workflow Canvas
+![Workflow Canvas](docs/images/workflow-canvas.png)
+*Design your workflows with an intuitive drag-and-drop interface*
+
+### Project Management
+![Project Management](docs/images/projects-view.png)
+*Save, load, and manage multiple workflow projects*
+
 ## 📖 Usage
 
 1. **Start both servers** (backend on port 8000, frontend on port 3000)
